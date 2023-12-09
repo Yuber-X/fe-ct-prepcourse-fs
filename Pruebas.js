@@ -30,14 +30,16 @@
 
 //  suma(6,8);
 
-function agregarSimboloExclamacion(str) {
-    // Agrega un símbolo de exclamación al final del string "str" y retórnalo
-    // Ejemplo: "hello world" ---> "hello world!"
-    // Tu código:
-    let dato = "!";
+// function agregarSimboloExclamacion(str) {
+//     // Agrega un símbolo de exclamación al final del string "str" y retórnalo
+//     // Ejemplo: "hello world" ---> "hello world!"
+//     // Tu código:
+//     let dato = "!";
 
-    return console.log (str+dato);  
- }
+//     return console.log (str+dato);  
+//  }
 
 
- agregarSimboloExclamacion("hola mundo");
+//  agregarSimboloExclamacion("hola mundo");
+
+

@@ -6,12 +6,14 @@ function obtenerMayor(x, y) {
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
 
-   if(x >= y ){
-      return x;
-   }
-   else{
-      return y;
-   }
+   while (x > y || x < y) {
+      if (x > y) {
+        y = x;
+      } else {
+        x = y;
+      }
+    }
+    return x;
 
 }
 
@@ -35,15 +37,14 @@ function conection(status) {
    // De lo contrario, presumimos que el usuario está "Offline".
    // Retornar el estado de conexión del usuario.
    // Tu código:
-   if (status === 1){
-      return "Online";
-   }
-   else if (status === 2){
-      return "Away";
-   }
-   else{
-      return "Offline";
-   }
+   switch (status) {
+      case 1:
+        return "Online";
+      case 2:
+        return "Away";
+      default:
+        return "Offline";
+    }
 }
 
 function saludo(idioma) {
@@ -93,24 +94,34 @@ function esDiezOCinco(num) {
    // Retornar true si "num" es 10 o 5.
    // De lo contrario, retornar false.
    // Tu código:
-   if(num === 10 || num === 5){
-      return true;
-   }
-   else{
-      return false;
-   }
+   for (let i = 0; i <= 1; i++) {
+      if (num === [10, 5][i]) {
+        return true;
+      }
+    }
+    return false;
 }
 
 function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
+   
    // Tu código:
-   if(num < 50 && num > 20){
-      return true;
+   // if(num < 50 && num > 20){
+   //    return true;
+   // }
+   // else{
+   //    return false;
+   // }
+
+   let enRango = false;
+   for (let i = 21; i < 50; i++) {
+     if (i === num) {
+       enRango = true;
+       break;
+     }
    }
-   else{
-      return false;
-   }
+   return enRango;
 }
 
 function esEntero(num) {
@@ -129,15 +140,31 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
-   if (num % 3 === 0 && num % 5 === 0) {
-      return "fizzbuzz";
-   } else if (num % 3 === 0) {
-      return "fizz";
-   } else if (num % 5 === 0) {
+    if (num % 3 === 0 && num % 5 === 0) {
+       return "fizzbuzz";
+    } else if (num % 3 === 0) {
+       return "fizz";
+    } else if (num % 5 === 0) {
       return "buzz";
-   } else {
-      return false;
-   }
+    } else {
+       return false;
+    }
+   //  for (let i = 1; i <= num; i++) {
+   //    switch (true) {
+   //      case i % 3 === 0 && i % 5 === 0:
+   //        console.log("fizzbuzz");
+   //        break;
+   //      case i % 3 === 0:
+   //        console.log("fizz");
+   //        break;
+   //      case i % 5 === 0:
+   //        console.log("buzz");
+   //        break;
+   //      default:
+   //        console.log(i);
+   //        break;
+   //    }
+   //  }
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -159,6 +186,18 @@ function operadoresLogicos(num1, num2, num3) {
    } else {
       return false;
    }
+   // switch (true) {
+   //    case num1 > 0 && num1 > num2 && num1 > num3:
+   //      return "Numero 1 es mayor y positivo";
+   //    case num1 === 0 && num2 === 0 && num3 === 0:
+   //      return "Error";
+   //    case num1 < 0 || num2 < 0 || num3 < 0:
+   //      return "Hay negativos";
+   //    case num3 > num1 && num3 > num2:
+   //      return num3 + 1;
+   //    default:
+   //      return false;
+   //  }
 }
 
 function esPrimo(num) {
@@ -171,13 +210,11 @@ function esPrimo(num) {
    if (num <= 1 || num % 1 !== 0) {
       return false;
    }
-
    for (let i = 2; i <= Math.sqrt(num); i++) {
       if (num % i === 0) {
          return false;
       }
    }
-
    return true;
 
 }
@@ -198,12 +235,21 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
-   if(num >= 100 && num <= 999){
-      return true;
-   }
-   else{
-      return false;
-   }
+   
+   // if(num >= 100 && num <= 999){
+   //    return true;
+   // }
+   // else{
+   //    return false;
+   // }
+
+   do {
+      if (num >= 100 && num <= 999) {
+        return true;
+      } else {
+        return false;
+      }
+    } while (false);
 }
 
 function doWhile(num) {
